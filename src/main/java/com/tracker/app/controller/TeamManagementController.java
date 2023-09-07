@@ -30,6 +30,7 @@ import com.tracker.app.service.TeamManagementService;
 
 import jakarta.validation.Valid;
 
+@CrossOrigin
 @RestController
 public class TeamManagementController {
 
@@ -85,7 +86,7 @@ public class TeamManagementController {
 		}
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin
 	@GetMapping("/v1/member/list/{memberId}")
 	public ResponseEntity<String> fetchTaskDetails(@PathVariable Long memberId) {
 		ObjectWriter ow = new ObjectMapper().setSerializationInclusion(Include.NON_NULL).writer().withDefaultPrettyPrinter();
